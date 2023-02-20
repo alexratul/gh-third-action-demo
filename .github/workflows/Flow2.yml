@@ -1,4 +1,4 @@
-name: Meta data 
+name: Metadata_WorkFlow 
 on:
   issues:
     types: [opened, edited, milestoned]
