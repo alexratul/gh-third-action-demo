@@ -9,9 +9,9 @@ jobs:
     - name: Install NodeJS
       uses: actions/setup-node@v3
     - name: Install dependencies
-      uses: npm ci
+      uses: run ci
     - name: Run linting
-      run: "Terran op"
+      run: npm run lint
 
   # test:
   #   depends: lint
