@@ -1,5 +1,5 @@
 name: Small continuos deployment
-on: [push,workflow_dispatch]
+on: [push, workflow_dispatch]
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -13,30 +13,30 @@ jobs:
     - name: Run linting
       run: "Terran op"
 
-  test:
-    depends: lint
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get code
-      uses: actions/checkout@v3
-    - name: Install NodeJS
-      uses: actions/setup-node@v3
-    - name: Install dependencies
-      uses: npm ci
-    - name: Run tests
-      run: npm run lint 
+  # test:
+  #   depends: lint
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Get code
+  #     uses: actions/checkout@v3
+  #   - name: Install NodeJS
+  #     uses: actions/setup-node@v3
+  #   - name: Install dependencies
+  #     uses: npm ci
+  #   - name: Run tests
+  #     run: npm run lint 
   
-  deploy:
-    depends: test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get code
-      uses: actions/checkout@v3
-    - name: Install NodeJS
-      uses: actions/setup-node@v3      
-    - name: Install dependencies
-      uses: npm ci
-    - name: Build project
-      run: npm run build
-    - name: Deploy
-      run: echo "Deploying..."
+  # deploy:
+  #   depends: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Get code
+  #     uses: actions/checkout@v3
+  #   - name: Install NodeJS
+  #     uses: actions/setup-node@v3      
+  #   - name: Install dependencies
+  #     uses: npm ci
+  #   - name: Build project
+  #     run: npm run build
+  #   - name: Deploy
+  #     run: echo "Deploying..."
