@@ -27,7 +27,7 @@ jobs:
       run: npm test
   
   deploy:
-    neends: test
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Get code
