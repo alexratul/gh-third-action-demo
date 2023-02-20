@@ -1,7 +1,5 @@
 name: Metadata_WorkFlow 
-on:
-  issues:
-    types: [opened, edited, milestoned]
+on: [workflow_dispatch]
 jobs:
   get_data:
     runs-on: ubuntu-latest
