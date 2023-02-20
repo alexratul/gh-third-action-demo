@@ -1,5 +1,21 @@
 name: Metadata_WorkFlow 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+  issues:
+    types:
+      - reopened
+      - opened
+
 jobs:
   get_data:
     runs-on: ubuntu-latest
